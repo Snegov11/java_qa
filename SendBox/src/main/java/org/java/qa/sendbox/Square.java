@@ -1,4 +1,4 @@
-package ru.java_qa.sendbox;
+package org.java.qa.sendbox;
 
 public class Square {
     public double l;
