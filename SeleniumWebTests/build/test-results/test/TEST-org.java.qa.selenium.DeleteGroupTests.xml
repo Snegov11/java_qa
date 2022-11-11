@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.java.qa.selenium.DeleteGroupTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-11T05:42:34" hostname="LAPTOP-EMDCMUOG" time="0.364">
+  <properties/>
+  <testcase name="deleteGroup" classname="org.java.qa.selenium.DeleteGroupTests" time="0.364"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1668145350331	geckodriver	INFO	Listening on 127.0.0.1:23197
+1668145351505	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "34419" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://127.0.0.1:34419/,http://localhost:34419/,http://[::1]:34419/" "-no-remote" "-profile" "C:\\Users\\Snegov\\AppData\\Local\\Temp\\rust_mozprofileleAlHP"
+1668145351827	Marionette	INFO	Marionette enabled
+1668145351833	Marionette	INFO	Listening on port 59227
+Read port: 59227
+WebDriver BiDi listening on ws://127.0.0.1:34419
+1668145351927	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Snegov\\AppData\\Local\\Temp\\rust_mozprofileleAlHP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:34419/devtools/browser/418e51bf-daf3-4e0e-a8da-6289563c9742
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+]]></system-err>
+</testsuite>
