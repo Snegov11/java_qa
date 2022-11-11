@@ -33,10 +33,6 @@ public class GroupHelper {
         driver.findElement(By.name("new")).click();
     }
 
-    public void goToGroupPage() {
-        driver.findElement(By.xpath("//li[@class='admin']")).click();
-    }
-
     public void returnToGroupPage() {
         driver.findElement(By.xpath("//li[@class='admin']")).click();
     }

@@ -7,7 +7,7 @@ public class CreateBookTests extends TestBase {
 
     @Test
     public void addNewGroup() throws Exception {
-        app.getGroupHelper().goToGroupPage();
+        app.getNavigationHelper().goToGroupPage();
         app.getGroupHelper().createNewGroup();
         app.getGroupHelper().fillGroup(new GroupData("Test2", "Test2", "Test2"));
         app.getGroupHelper().submitGroupCreation();
