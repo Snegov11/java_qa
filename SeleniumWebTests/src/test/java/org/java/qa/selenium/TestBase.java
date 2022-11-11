@@ -1,14 +1,16 @@
 package org.java.qa.selenium;
 
-import java.util.concurrent.TimeUnit;
-import org.testng.annotations.*;
-import static org.testng.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
-public class AddressBookTests {
+import java.util.concurrent.TimeUnit;
+
+import static org.testng.Assert.fail;
+
+public class TestBase {
     private WebDriver driver;
-    private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
 
     @BeforeClass(alwaysRun = true)
@@ -18,7 +20,7 @@ public class AddressBookTests {
         login("admin", "secret");
     }
 
-    private void login(String userName, String password) {
+    protected void login(String userName, String password) {
         driver.get("http://localhost/addressbook/");
         driver.findElement(By.name("user")).clear();
         driver.findElement(By.name("user")).sendKeys(userName);
@@ -27,20 +29,11 @@ public class AddressBookTests {
         driver.findElement(By.xpath("//input[@type='submit']")).click();
     }
 
-    @Test
-    public void addGroup() throws Exception {
-        goToGroupPage();
-        createNewGroup();
-        fillGroup(new GroupData("Test2", "Test2", "Test2"));
-        submitGroupCreation();
-        returnToGroupPage();
-    }
-
-    private void submitGroupCreation() {
+    protected void submitGroupCreation() {
         driver.findElement(By.name("submit")).click();
     }
 
-    private void fillGroup(GroupData groupData) {
+    protected void fillGroup(GroupData groupData) {
         driver.findElement(By.name("group_name")).click();
         driver.findElement(By.name("group_name")).clear();
         driver.findElement(By.name("group_name")).sendKeys(groupData.getName());
@@ -54,19 +47,19 @@ public class AddressBookTests {
         driver.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
     }
 
-    private void createNewGroup() {
+    protected void createNewGroup() {
         driver.findElement(By.name("new")).click();
     }
 
-    private void goToGroupPage() {
+    protected void goToGroupPage() {
         goToGroupPage(By.xpath("//li[@class='admin']"));
     }
 
-    private void returnToGroupPage() {
+    protected void returnToGroupPage() {
         goToGroupPage(By.xpath("//li[@class='admin']"));
     }
 
-    private void goToGroupPage(By xpath) {
+    protected void goToGroupPage(By xpath) {
         driver.findElement(xpath).click();
     }
 
@@ -79,36 +72,11 @@ public class AddressBookTests {
         }
     }
 
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+    protected void deleteGroups() {
+        driver.findElement(By.name("delete")).click();
     }
 
-    private boolean isAlertPresent() {
-        try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
-
-    private String closeAlertAndGetItsText() {
-        try {
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            if (acceptNextAlert) {
-                alert.accept();
-            } else {
-                alert.dismiss();
-            }
-            return alertText;
-        } finally {
-            acceptNextAlert = true;
-        }
+    protected void selectGroup() {
+        driver.findElement(By.name("selected[]")).click();
     }
 }
