@@ -1,4 +1,4 @@
-package org.java.qa.selenium.appmanager;
+package org.java.qa.selenium.group.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

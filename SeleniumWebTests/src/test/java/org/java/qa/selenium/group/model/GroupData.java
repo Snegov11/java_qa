@@ -1,4 +1,4 @@
-package org.java.qa.selenium.model;
+package org.java.qa.selenium.group.model;
 
 public class GroupData {
     private final String name;

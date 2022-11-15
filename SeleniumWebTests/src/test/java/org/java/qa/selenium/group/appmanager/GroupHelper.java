@@ -1,6 +1,6 @@
-package org.java.qa.selenium.appmanager;
+package org.java.qa.selenium.group.appmanager;
 
-import org.java.qa.selenium.model.GroupData;
+import org.java.qa.selenium.group.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

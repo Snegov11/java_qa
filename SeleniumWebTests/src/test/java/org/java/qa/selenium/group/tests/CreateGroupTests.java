@@ -1,9 +1,9 @@
-package org.java.qa.selenium.tests;
+package org.java.qa.selenium.group.tests;
 
-import org.java.qa.selenium.model.GroupData;
+import org.java.qa.selenium.group.model.GroupData;
 import org.testng.annotations.*;
 
-public class CreateBookTests extends TestBase {
+public class CreateGroupTests extends TestBase {
 
     @Test
     public void addNewGroup() throws Exception {

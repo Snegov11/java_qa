@@ -1,4 +1,4 @@
-package org.java.qa.selenium.tests;
+package org.java.qa.selenium.group.tests;
 
 import org.testng.annotations.*;
 

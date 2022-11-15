@@ -1,6 +1,6 @@
-package org.java.qa.selenium.tests;
+package org.java.qa.selenium.addressbook.tests;
 
-import org.java.qa.selenium.appmanager.ApplicationManager;
+import org.java.qa.selenium.addressbook.appmanager.ApplicationManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
