@@ -10,15 +10,18 @@ public class ApplicationManager {
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
     private SessionHelper sessionHelper;
+    private ContactsHelper contactsHelper;
     public WebDriver driver;
 
     public void init() {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        sessionHelper = new SessionHelper(driver);
         sessionHelper.login("admin", "secret");
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);
-        sessionHelper = new SessionHelper(driver);
+        contactsHelper = new ContactsHelper(driver);
+
     }
 
     public void stop() {
@@ -32,9 +35,11 @@ public class ApplicationManager {
     public GroupHelper getGroupHelper() {
         return groupHelper;
     }
-
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
+    }
+    public ContactsHelper getContactsHelper() {
+        return contactsHelper;
     }
 
 }

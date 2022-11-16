@@ -1,4 +1,4 @@
-package org.java.qa.selenium.addressbook.model;
+package org.java.qa.selenium.group.model;
 
 public class ContactData {
 

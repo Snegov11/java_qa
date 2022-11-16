@@ -1,6 +1,6 @@
-package org.java.qa.selenium.addressbook.tests;
+package org.java.qa.selenium.group.tests;
 
-import org.java.qa.selenium.addressbook.model.ContactData;
+import org.java.qa.selenium.group.model.ContactData;
 import org.testng.annotations.Test;
 
 public class DeleteContactTests extends TestBase {

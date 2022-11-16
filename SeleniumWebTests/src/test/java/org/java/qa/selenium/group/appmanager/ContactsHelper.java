@@ -1,6 +1,6 @@
-package org.java.qa.selenium.addressbook.appmanager;
+package org.java.qa.selenium.group.appmanager;
 
-import org.java.qa.selenium.addressbook.model.ContactData;
+import org.java.qa.selenium.group.model.ContactData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -62,7 +62,8 @@ public class ContactsHelper {
     }
 
     public void selectContact() {
-        driver.findElement(By.xpath("//input[@id='2']")).click();
+        int id = Integer.parseInt(driver.findElement(By.xpath("//input[@type='checkbox']")).getAttribute("value"));
+        driver.findElement(By.xpath("//input[@id='"+id+"']")).click();
     }
 
 }

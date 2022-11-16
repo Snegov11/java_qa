@@ -13,4 +13,8 @@ public class NavigationHelper {
     public void goToGroupPage() {
         driver.findElement(By.xpath("//li[@class='admin']")).click();
     }
+
+    public void goToAddContactsPage() {
+        driver.findElement(By.xpath("//body/div[@id='container']/div[@id='nav']/ul/li[2]")).click();
+    }
 }
