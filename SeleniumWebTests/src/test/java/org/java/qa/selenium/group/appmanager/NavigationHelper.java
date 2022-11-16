@@ -3,18 +3,17 @@ package org.java.qa.selenium.group.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NavigationHelper {
-    private WebDriver driver;
+public class NavigationHelper extends HelperBase {
 
     public NavigationHelper(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void goToGroupPage() {
-        driver.findElement(By.xpath("//li[@class='admin']")).click();
+        click(By.xpath("//li[@class='admin']"));
     }
 
     public void goToAddContactsPage() {
-        driver.findElement(By.xpath("//body/div[@id='container']/div[@id='nav']/ul/li[2]")).click();
+        click(By.xpath("//body/div[@id='container']/div[@id='nav']/ul/li[2]"));
     }
 }

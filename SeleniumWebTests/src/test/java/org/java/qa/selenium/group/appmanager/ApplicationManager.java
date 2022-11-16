@@ -16,6 +16,7 @@ public class ApplicationManager {
     public void init() {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.get("http://localhost/addressbook/");
         sessionHelper = new SessionHelper(driver);
         sessionHelper.login("admin", "secret");
         groupHelper = new GroupHelper(driver);
