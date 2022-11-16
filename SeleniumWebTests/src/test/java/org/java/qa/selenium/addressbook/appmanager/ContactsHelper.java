@@ -1,31 +1,17 @@
 package org.java.qa.selenium.addressbook.appmanager;
 
 import org.java.qa.selenium.addressbook.model.ContactData;
-import org.java.qa.selenium.group.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 
 public class ContactsHelper {
     private WebDriver driver;
 
     public ContactsHelper(WebDriver driver) {
         this.driver = driver;
-    }
-
-    public void fillGroup(GroupData groupData) {
-        driver.findElement(By.name("group_name")).click();
-        driver.findElement(By.name("group_name")).clear();
-        driver.findElement(By.name("group_name")).sendKeys(groupData.getName());
-        driver.findElement(By.name("group_parent_id")).click();
-        driver.findElement(By.name("group_parent_id")).click();
-        driver.findElement(By.name("group_header")).click();
-        driver.findElement(By.name("group_header")).clear();
-        driver.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
-        driver.findElement(By.name("group_footer")).click();
-        driver.findElement(By.name("group_footer")).clear();
-        driver.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
     }
 
     public void returnToContactPage() {
@@ -63,6 +49,20 @@ public class ContactsHelper {
 
         driver.findElement(By.name("mobile")).click();
         driver.findElement(By.name("mobile")).sendKeys(contactData.getMobilePhone());
+    }
+
+    public void acceptDeleteContact() {
+        //assertThat(driver.switchTo().alert().getText(), is("Delete 1 addresses?"));
+        Assert.assertEquals(driver.switchTo().alert().getText(), "Delete 1 addresses?");
+        driver.switchTo().alert().accept();
+    }
+
+    public void clickDelete() {
+        driver.findElement(By.cssSelector(".left:nth-child(8) > input")).click();
+    }
+
+    public void selectContact() {
+        driver.findElement(By.xpath("//input[@id='2']")).click();
     }
 
 }
