@@ -47,4 +47,12 @@ public class ContactsHelper extends HelperBase {
         click(By.xpath("//input[@id='"+id+"']"));
     }
 
+    public void initContactModification() {
+        int id = Integer.parseInt(driver.findElement(By.xpath("//input[@type='checkbox']")).getAttribute("value"));
+        click(By.xpath("//a[@href='edit.php?id="+id+"']"));
+    }
+
+    public void updateContact() {
+        click(By.name("update"));
+    }
 }
