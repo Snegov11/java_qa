@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.java.qa.selenium.group.tests.CreateGroupTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-21T06:15:46" hostname="LAPTOP-EMDCMUOG" time="0.615">
+  <properties/>
+  <testcase name="addNewGroup" classname="org.java.qa.selenium.group.tests.CreateGroupTests" time="0.615"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting Microsoft Edge WebDriver 107.0.1418.52 (bd1735e913fc348d96b96eec8b44433d89b2dbd0) on port 8188
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+</testsuite>
