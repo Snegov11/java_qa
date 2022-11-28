@@ -14,7 +14,8 @@ public class CreateContactTests extends TestBase {
                 "test",
                 "test@test.ru",
                 "test 123",
-                "000 000 00 00"));
+                "000 000 00 00",
+                "Test2"), true);
         app.getContactsHelper().submitAddContact();
         app.getContactsHelper().returnToContactPage();
     }

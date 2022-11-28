@@ -2,7 +2,10 @@ package org.java.qa.selenium.group.appmanager;
 
 import org.java.qa.selenium.group.model.ContactData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class ContactsHelper extends HelperBase {
@@ -25,12 +28,19 @@ public class ContactsHelper extends HelperBase {
         click(By.xpath("//body/div[@id='container']/div[@id='content']/form[@accept-charset='utf-8']/input[1]"));
     }
 
-    public void fillContact(ContactData contactData) {
+    public void fillContact(ContactData contactData, boolean creation) {
         type(By.name("middlename"), contactData.getMiddleName());
         type(By.name("lastname"), contactData.getLastName());
         type(By.name("email"), contactData.getEmail());
         type(By.name("address"), contactData.getAddress());
         type(By.name("mobile"), contactData.getMobilePhone());
+        if (creation) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.name("new_group")));
+            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        } else {
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
+        }
     }
 
     public void acceptDeleteContact() {

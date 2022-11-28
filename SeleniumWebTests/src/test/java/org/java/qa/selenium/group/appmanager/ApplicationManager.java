@@ -14,7 +14,7 @@ public class ApplicationManager {
     private GroupHelper groupHelper;
     private SessionHelper sessionHelper;
     private ContactsHelper contactsHelper;
-    private Browser browser;
+    private final Browser browser;
     public WebDriver driver;
 
     public ApplicationManager(Browser browser) {
@@ -22,14 +22,14 @@ public class ApplicationManager {
     }
 
     public void init() {
-        if (browser == Browser.FIREFOX) {
+        if (browser.equals(Browser.FIREFOX)) {
             driver = new FirefoxDriver();
-        } else if (browser == Browser.CHROME) {
+        } else if (browser.equals(Browser.CHROME)) {
             driver = new ChromeDriver();
-        } else if (browser == Browser.EDGE) {
+        } else if (browser.equals(Browser.EDGE)) {
             driver = new EdgeDriver();
         }
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook/");
         sessionHelper = new SessionHelper(driver);
         sessionHelper.login("admin", "secret");

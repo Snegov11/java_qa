@@ -14,7 +14,8 @@ public class ModificationContactTests extends  TestBase{
                 "Modif last name",
                 "modifemail@modifemai.com",
                 "Modif address",
-                "111 111 11 11"));
+                "111 111 11 11",
+                null), false);
         app.getContactsHelper().updateContact();
     }
 

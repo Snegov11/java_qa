@@ -9,7 +9,13 @@ public class DeleteContactTests extends TestBase {
     public void deleteContact() {
         app.getNavigationHelper().goToAddContactsPage();
         app.getContactsHelper().startCreationContact();
-        app.getContactsHelper().fillContact(new ContactData("test", "test", "test@test.ru", "test 123", "000 000 00 00"));
+        app.getContactsHelper().fillContact(new ContactData(
+                "test",
+                "test",
+                "test@test.ru",
+                "test 123",
+                "000 000 00 00",
+                null), false);
         app.getContactsHelper().submitAddContact();
         app.getContactsHelper().returnToContactPage();
         app.getContactsHelper().selectContact();
