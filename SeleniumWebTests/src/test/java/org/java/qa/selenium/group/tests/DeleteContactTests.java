@@ -15,9 +15,9 @@ public class DeleteContactTests extends TestBase {
                 "test@test.ru",
                 "test 123",
                 "000 000 00 00",
-                null), false);
+                "Test2"), true);
         app.getContactsHelper().submitAddContact();
-        app.getContactsHelper().returnToContactPage();
+        app.getNavigationHelper().returnToContactPage();
         app.getContactsHelper().selectContact();
         app.getContactsHelper().clickDelete();
         app.getContactsHelper().acceptDeleteContact();

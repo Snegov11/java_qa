@@ -17,7 +17,7 @@ public class CreateContactTests extends TestBase {
                 "000 000 00 00",
                 "Test2"), true);
         app.getContactsHelper().submitAddContact();
-        app.getContactsHelper().returnToContactPage();
+        app.getNavigationHelper().returnToContactPage();
     }
 
 }

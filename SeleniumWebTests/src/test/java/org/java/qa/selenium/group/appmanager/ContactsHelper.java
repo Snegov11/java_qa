@@ -14,10 +14,6 @@ public class ContactsHelper extends HelperBase {
         super(driver);
     }
 
-    public void returnToContactPage() {
-        click(By.xpath("//body/div[@id='container']/div[@id='nav']/ul/li[1]"));
-    }
-
     public void submitAddContact() {
         click(By.xpath("(//input[@name='submit'])[2]"));
     }

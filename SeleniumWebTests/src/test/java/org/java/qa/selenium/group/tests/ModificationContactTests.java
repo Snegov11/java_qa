@@ -7,7 +7,7 @@ public class ModificationContactTests extends  TestBase{
 
     @Test
     public void testContactModification() {
-        app.getContactsHelper().returnToContactPage();
+        app.getNavigationHelper().returnToContactPage();
         app.getContactsHelper().initContactModification();
         app.getContactsHelper().fillContact(new ContactData(
                 "Modif middle name",
