@@ -61,4 +61,8 @@ public class ContactsHelper extends HelperBase {
     public void updateContact() {
         click(By.name("update"));
     }
+
+    public int getContactsCount() {
+        return driver.findElements(By.name("entry")).size();
+    }
 }
